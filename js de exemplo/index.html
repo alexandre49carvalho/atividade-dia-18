@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizando Funções</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Utilizando as Funções</h1>
+
+        <label for="inputString">Digite uma lista de números separados por vírgula:</label>
+        <input type="text" id="inputString">
+        <button onclick="processarEntrada()">Processar</button>
+
+        <div id="output"></div>
+    </div>
+   
+<script>
+    function processarEntrada() {
+        const entrada = document.getElementById('inputString').value; 
+// Obtém o valor de entrada de um elemento 
+        const numeros = entrada.split(',').map(num => parseInt(num.trim()));
+// Divide a entrada em uma matriz de números,
+
+// Exemplo de forEach
+    const resultadoForEach = [];
+        numeros.forEach(num => resultadoForEach.push(num));
+// Usa o método forEach para mudar a matriz de números e preencher a matriz "resultadoForEach" 
+
+// Exemplo de map
+    const numerosAoQuadrado = numeros.map(num => num * num); 
+// o map calcula o quadrado de cada número na matriz e armazená em uma nova matriz "numerosAoQuadrado"
+
+// Exemplo de filter
+    const numerosPares = numeros.filter(num => num % 2 === 0);
+// Usa o filter para criar uma matriz contendo apenas os números pares da matriz
+
+// Exemplo de reduce
+    const soma = numeros.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0); 
+// Usa o reduce para calcular a soma de todos os números na matriz
+
+// Exemplo de setTimeout
+    setTimeout(() => {
+        console.log("Timeout finalizado");
+// Define uma função de retorno para ser executada após um intervalo de 2 segundos
+    }, 2000);
+
+// Exemplo de fetch (busca dados fictícios em JSON)
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+
+// Faz uma solicitação de busca de dados JSON de um URL específico
+    .then(response => response.json()) 
+// Converte a resposta em formato JSON
+    .then(data => console.log("Exemplo de fetch:", data)) 
+// Exibe os dados obtidos na console
+    .catch(error => console.error("Erro no fetch:", error)); 
+// Manipula qualquer erro que ocorra durante a solicitação fetch
+
+// Exibindo resultados na página
+        const output = document.getElementById('output');
+
+// Obtém o elemento HTML com o ID 
+        output.innerHTML = `
+        <p><strong>Números:</strong> ${numeros.join(', ')}</p> 
+        // Exibe os números de entrada separados por vírgula
+        <p><strong>Números ao quadrado:</strong> ${numerosAoQuadrado.join(', ')}</p> 
+        // Exibe os números ao quadrado separados por vírgula
+        <p><strong>Números pares:</strong> ${numerosPares.join(', ')}</p> 
+        // Exibe os números pares separados por vírgula
+        <p><strong>Soma:</strong> ${soma}</p> 
+        // Exibe a soma de todos os números`;
+}
+</script>
+</body>
+</html>

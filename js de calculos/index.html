@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo de Funções(calculos)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Exemplo de calculos</h1>
+
+<p>Insira um número e escolha uma operação para realizar:</p>
+
+<label for="numero">Insira um número:</label>
+<input type="number" id="numero">
+<br><br>
+
+<button onclick="calcularQuadrado()">Calcular Quadrado</button>
+<button onclick="calcularRaiz()">Calcular Raiz Quadrada</button>
+<button onclick="calcularFatorial()">Calcular Fatorial</button>
+
+<p id="resultado"></p>
+
+<script>
+// Função para calcular o quadrado de um número
+function calcularQuadrado() {
+  var numero = document.getElementById("numero").value;
+  var resultado = parseInt(numero) * parseInt(numero);
+  exibirResultado(resultado);
+}
+
+// Função para calcular a raiz quadrada de um número
+function calcularRaiz() {
+  var numero = document.getElementById("numero").value;
+  var resultado = Math.sqrt(parseInt(numero));
+  exibirResultado(resultado);
+}
+
+// Função para calcular o fatorial de um número
+function calcularFatorial() {
+  var numero = document.getElementById("numero").value;
+  var resultado = fatorial(parseInt(numero));
+  exibirResultado(resultado);
+}
+
+// Função fatorial
+function fatorial(n) {
+  return n < 2 ? 1 : n * fatorial(n - 1);
+}
+
+// Função para exibir o resultado na página
+function exibirResultado(resultado) {
+  document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+}
+</script>
+
+
+
+</body>
+</html>

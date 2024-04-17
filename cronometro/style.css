@@ -1,0 +1,25 @@
+
+body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+        #detonador {
+        cursor: pointer;
+        padding: 20px 40px;
+        font-size: 24px;
+        border: 2px solid #333;
+        border-radius: 8px;
+        background-color: #ff0000;
+        color: #fff;
+        transition: background-color 0.3s ease;
+    }
+    #detonador:hover {
+        background-color: #c91d1d;
+    }
+    

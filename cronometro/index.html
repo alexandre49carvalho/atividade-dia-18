@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detonador</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="detonador" onclick="iniciarContagemRegressiva()">Detonar</div>
+
+<script>
+function iniciarContagemRegressiva() {
+    var contador = 5; // tempo em segundos
+    var detonador = document.getElementById("detonador");
+
+    detonador.innerHTML = contador;
+
+    var interval = setInterval(function() {
+        contador--;
+        if (contador <= 0) {
+            clearInterval(interval);
+            detonador.innerHTML = "💥";
+            
+        } else {
+            detonador.innerHTML = contador;
+        }
+    }, 1000); // atualiza a cada segundo
+}
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+body {
+    background-color: black;
+    color: white;
+    font-size: 50px; /* aumenta o tamanho da fonte */
+    text-align: center; /* centraliza o texto */
+}
+
+button {
+    margin-top: 20px; /* adiciona um espaçamento acima do botão */
+}
+ 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo alerta</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>alerta</h1>
+
+<script>
+// Função para exibir um prompt para inserção do nome
+function exibirPrompt() {
+  var nome = prompt("Por favor, insira seu nome:");
+  if (nome !== null && nome !== "") {
+    exibirAlertaBoasVindas(nome);
+  }
+}
+
+// Função para exibir um alerta de boas-vindas com o nome inserido
+function exibirAlertaBoasVindas(nome) {
+  alert("Bem-vindo, " + nome + "!");
+}
+</script>
+
+<button onclick="exibirPrompt()">Clique aqui para iniciar</button>
+
+
+
+</body>
+</html>
